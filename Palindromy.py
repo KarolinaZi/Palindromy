@@ -6,17 +6,13 @@
 # Znasz już funkcje kolekcji, które pozwalają odnosić się do elementów indeksowanych od początku i od końca.
 #Do zadania dodaj krótką dokumentację i umieść je w zdalnym repozytorium. Link prześlij Mentorowi.
 
+import re
 def czy_palindrom(word):
     """
     Checks if a word is a palindrome.
     """
-    if word == word[::-1]:
-        result = True
-    else:
-        result = False
+    only_letters = re.sub("[^a-zA-Z]","",word)
+    return only_letters.lower() == only_letters.lower()[::-1]
     
-    print(result)
 
-czy_palindrom("anna")
-
-
+czy_palindrom(" ,.,$kot toK.")
